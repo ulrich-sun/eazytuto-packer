@@ -2,7 +2,7 @@ resource "aws_instance" "myec2" {
   count = var.number
   ami             = "ami-0a8b1d01fb46008e6" # CentOS 7
   instance_type   = "t2.medium"              # you can change this
-  security_groups = ["eazytraining-sg"]
+  security_groups = ["eazytuto-sg"]
   tags = {
     Name = "machine-${count.index}"
   }

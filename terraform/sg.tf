@@ -1,9 +1,8 @@
 resource "aws_security_group" "allow_http_https" {
-  name        = "eazytraining-sg"
+  name        = "eazytuto-sg"
   description = "Allow all traffic on all port"
 
   ingress {
-    description = "http from vpc"
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
