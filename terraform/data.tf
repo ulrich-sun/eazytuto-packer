@@ -7,7 +7,7 @@ data "aws_ami" "eazytuto-ami"{
     }
     filter {
       name = "owner-id" 
-      values = [925037323203]
+      values = [339713101899]
     }
-    owners = [925037323203]
+    owners = [339713101899]
 }
