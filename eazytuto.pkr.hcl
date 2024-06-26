@@ -15,7 +15,7 @@ source "amazon-ebs" "eazytuto" {
   ami_name      = "eazytuto-${local.timestamp}"
   instance_type = "t2.medium"
   region        = "us-east-1"
-  source_ami    = "ami-0ea68698d2ac99777"
+  source_ami    = "ami-0d71ca6a78e324f68" #"ami-0ea68698d2ac99777"
   ssh_username  = "centos"
   run_tags      = {
     Name        = "eazytuto-ami-builder" 
