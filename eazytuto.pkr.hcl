@@ -14,7 +14,7 @@ locals {
 source "amazon-ebs" "eazytuto" {
   ami_name      = "eazytuto-${local.timestamp}"
   instance_type = "t2.medium"
-  region        = "eu-east-1"
+  region        = "us-east-1"
   source_ami    = "ami-0ea68698d2ac99777"
   ssh_username  = "centos"
   run_tags      = {
