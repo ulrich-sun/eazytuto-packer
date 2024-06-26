@@ -5,7 +5,7 @@ on:
     branches:
       - packer-actions
 env:
-    CONFIG_DIRECTORY: "terraform"
+  CONFIG_DIRECTORY: "terraform"
 jobs:
   build:
     runs-on: ubuntu-latest
