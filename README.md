@@ -1,3 +1,5 @@
+# your process running well
+[![Build Packer Image](https://github.com/ulrich-sun/eazytuto-packer/actions/workflows/packer-build.yml/badge.svg?branch=packer-actions&event=push)](https://github.com/ulrich-sun/eazytuto-packer/actions/workflows/packer-build.yml)
 ![alt text](image-2.png)
 # Objectives
 Building AMIs for our cloud providers to save time in provisioning our different stacks, whether in a corporate or personal work environment.
