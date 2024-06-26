@@ -1,10 +1,9 @@
 name: Build Packer Image
 
 on:
-  workflow_dispatch:
-  # push:
-  #   branches:
-  #     - packer-actions
+  push:
+    branches:
+      - packer-actions
 env:
   CONFIG_DIRECTORY: "terraform"
 jobs:
@@ -47,8 +46,7 @@ jobs:
         aws-region: us-east-1
 
     - name: Initialize Terraform
-      run: |
-        pwd      
+      run: |    
         terraform init
         ls -a
       working-directory: ${{ env.CONFIG_DIRECTORY }}
