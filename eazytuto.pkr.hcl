@@ -40,13 +40,22 @@ build {
   }
   provisioner "file" {
     source = "./defaults.cfg"
-    destination = "/etc/cloud/cloud.cfg.d/defaults.cfg"
+    destination = "/tmp/defaults.cfg"
   }
   provisioner "file" {
     source = "./motd"
-    destination = "/etc/motd"
+    destination = "/tmp/motd"
   }
-
+provisioner "shell" {
+    inline = [
+      "sudo mv /tmp/defaults.cfg /etc/cloud/cloud.cfg.d/defaults.cfg"
+    ]
+  }
+  provisioner "shell" {
+    inline = [
+      "sudo mv /tmp/motd /etc/motd"
+    ]
+  }
   post-processor "manifest" {
     output = "manifest.json"
     strip_path = true
