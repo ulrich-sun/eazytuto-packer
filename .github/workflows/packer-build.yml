@@ -1,9 +1,10 @@
 name: Build Packer Image
 
 on:
-  push:
-    branches:
-      - packer-actions
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - packer-actions
 env:
   CONFIG_DIRECTORY: "terraform"
 jobs:

@@ -1,0 +1,28 @@
+name: Build Packer Image
+
+on:
+  push:
+    branches:
+      - packer-actions
+env:
+  CONFIG_DIRECTORY: "terraform"
+jobs:
+  launch:
+    # needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Terraform CLI
+      uses: hashicorp/setup-terraform@v1
+      with:
+        terraform_version: 1.6.6
+    - name: Initialize Terraform
+      run: |
+        pwd      
+        terraform init
+        ls -a
+      working-directory: ${{ env.CONFIG_DIRECTORY }}
+    - name: Terraform apply
+      run: |
+        ls -a
+        terraform apply -auto-approve
+      working-directory: ${{ env.CONFIG_DIRECTORY }}
