@@ -1,7 +1,4 @@
-1 1.1 1- ı ı
-
-by uırich NOUMSI
-
+![alt text](image-2.png)
 # Objectifs
 Builder des AMI pour nos cloud Provider, afin de gagner du temps dans le provisionnement de nos differentes stack
 Que ce soit dans le cadre d'une entreprise ou de travail personnel
