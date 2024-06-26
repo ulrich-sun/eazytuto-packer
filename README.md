@@ -1,56 +1,50 @@
 ![alt text](image-2.png)
-# Objectifs
-Builder des AMI pour nos cloud Provider, afin de gagner du temps dans le provisionnement de nos differentes stack
-Que ce soit dans le cadre d'une entreprise ou de travail personnel
-# Prerequis
-- installation de Packer
-- installation de Terraform
-- Avoir un Compte d'un cloud Provider (AWS dans notre cas) + des access key et secret key de disponibles
-- installer aws cli sur votre serveur ou votre poste de travail
+# Objectives
+Building AMIs for our cloud providers to save time in provisioning our different stacks, whether in a corporate or personal work environment.
 
+# Prerequisites
+- Packer installation
+- Terraform installation
+- Having an account with a cloud provider (AWS in our case) + available access key and secret key
+- Installing AWS CLI on your server or workstation
+- Retrieving the source code
+- To retrieve the source code, you have two options:
 
-# Recuperation du code source
-Pour recuperer le code source vous avez deux Options
-- la premiere est de cloner tout simplemenet le repos
-    ```bash 
-    git clone https://github.com/ulrich-sun/eazytuto-packer.git
-    ```
-- la seconde est de realiser un fork
-l'avantage d'un fork est que vous pouvez me proposer des ameliorations sur mon code 
-
-# Lancement de la stack
-## Build de l'AMI
+The first is to simply clone the repository
+```bash
+git clone https://github.com/ulrich-sun/eazytuto-packer.git
+```
+The second is to fork it The advantage of forking is that you can propose improvements to my code.
+# Launching the stack
+## Building the AMI
 ```bash
 cd eazytuto-packer
 packer init eazytuto.pkr.hcl && packer fmt eazytuto.pkr.hcl && packer validate eazytuto.pkr.hcl  && packer build eazytuto.pkr.hcl
 ```
-
-## Creation d'une instance aws
-- recuperer la nouvelle AMI
-- remplacer au niveau du code terraform
-- lancer la creation de l'instance
+## Creating an AWS instance
+- Retrieve the new AMI
+- Replace in the Terraform code
+- Launch the instance creation
 ```bash
 cd eazytuto-packer/terraform
 terraform init 
 terraform plan
 terraform apply -auto-approve
 ```
+Wait a few minutes depending on the power of your machine and your internet connection.
 
-Patienter quelques Minutes en fonction de la puissance de votre machine et de votre connexion internet
-
-# Test de la VM
-- recuperer l'adresse ip qui s'affiche a l'ecran
-- connecter vous sur la VM via un outils de connexion lecher SSH (mobaxterm, Putty) ou utiliser tout simplement votre cmd ou CLI
-```bash
-ssh centos@adresse_ip
+# Testing the VM
+- Retrieve the IP address displayed on the screen
+- Connect to the VM using a secure connection tool (mobaxterm, Putty) or simply use your cmd or CLI
+``` bash
+ssh centos@ip_address
 ```
-- entrer le mot de passe: eazytuto
-- une fois connecter checker si jenkins est up and running
+- Enter the password: eazytuto
+- Once connected, check if Jenkins is up and running
 ```bash
 docker ps 
 ```
-- ouvrer un navigateur et coller votre adresse_ip:8080
-
-## Resultat
+Open a browser and paste your ip_address:8080
+# Result
 ![resultat_connexion](image.png)
 ![jenkins](image-1.png)
